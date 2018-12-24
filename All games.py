@@ -1,14 +1,16 @@
 import Guess_the_numbers
 import age_guesser
 import Flip_a_Coin
-import tic_tac_tow
+import TIC
 import time
+
 
 game_list = ('Number guesser = 1\n' 'Age Guesser = 2\n' 'Coin flip = 3\n' 'Tic Tac Toe = 4\n' 'Quit = 8\n')
 
 def Games():
-    print("Alright what game do you want to play\n")
     time.sleep(1)
+    print("\n\nAlright what game do you want to play\n")
+    time.sleep(0.5)
     print(game_list)
 
 if input("Shall we play a game?  [y|n]") == 'y':
@@ -21,7 +23,7 @@ else:
 
 
 
-time.sleep(2)
+time.sleep(1)
 games = input("Type the the number next to the game you want to play__:\n\n")
 games = int(games)
 
@@ -33,13 +35,16 @@ while(games<= 6 and games>=1):
 
         
     elif games == 2:
-        age_guesser.AGE()
+        age_guesser.AGE()        
+        Games()
 
     elif games == 3:
         Flip_a_Coin.COIN()
+        Games()
 
     elif games == 4:
-        tic_tac_tow.tic_tac_toe()
+        TIC.tic()
+        Games()
 
     elif games == 5:
         print()
@@ -50,11 +55,13 @@ while(games<= 6 and games>=1):
     elif games == 7:
         print()
 
+    elif games == 8:
+        print("Well maybe next time. Good bye")
+        time.sleep(1)
+        print("\n",quit())
+
     else:
-        games == 8:
-            print("Well maybe next time. Good bye")
-            time.sleep(1)
-            quit()
+        quit()
         
         
         
@@ -71,3 +78,5 @@ while(games<= 6 and games>=1):
 
 
     
+
+
